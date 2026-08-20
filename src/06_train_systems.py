@@ -11,6 +11,7 @@ the official train split and evaluated once on the official test split.
 """
 import pandas as pd, numpy as np, json, time
 from pathlib import Path
+import pathlib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression, SGDClassifier
 from sklearn.svm import LinearSVC
@@ -19,8 +20,19 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import f1_score, classification_report
 
-DATA = Path("/home/claude/blp25_task1/data/subtask_1A")
-OUT = Path("/home/claude/audit/systems"); OUT.mkdir(parents=True, exist_ok=True)
+import os
+_HERE = pathlib.Path(__file__).resolve().parent
+_ROOT = _HERE.parent
+# Dataset location: env var BLP25_DATA, else ../blp25_task1, else ./blp25_task1
+_CANDIDATES = [os.environ.get("BLP25_DATA"), _ROOT / "blp25_task1",
+               _ROOT.parent / "blp25_task1"]
+_BASE = next((pathlib.Path(c) for c in _CANDIDATES if c and pathlib.Path(c).exists()), None)
+if _BASE is None:
+    raise SystemExit("Dataset not found. Clone https://github.com/AridHasan/blp25_task1 "
+                     "next to this repo, or set BLP25_DATA=/path/to/blp25_task1")
+
+DATA = _BASE / "data" / "subtask_1A"
+OUT = _ROOT / "results"; OUT.mkdir(parents=True, exist_ok=True)
 SEED = 20260819
 
 def load(split):

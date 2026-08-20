@@ -9,11 +9,13 @@ Empirical grounding for the paper's central claims, using real predictions.
 """
 import pandas as pd, numpy as np, json, itertools
 from pathlib import Path
+import pathlib
+_ROOT = pathlib.Path(__file__).resolve().parent.parent
 from scipy import stats
 from sklearn.metrics import f1_score
 
-SYS = Path("/home/claude/audit/systems")
-RES = Path("/home/claude/audit/results"); RES.mkdir(exist_ok=True)
+SYS = _ROOT / "results"
+RES = _ROOT / "results"; RES.mkdir(exist_ok=True)
 rng = np.random.default_rng(20260819)
 
 df = pd.read_csv(SYS / "test_predictions.csv", dtype=str,

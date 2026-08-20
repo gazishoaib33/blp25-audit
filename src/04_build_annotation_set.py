@@ -13,13 +13,25 @@ written to a separate file that annotators never receive.
 """
 import pandas as pd, numpy as np, json, argparse
 from pathlib import Path
+import pathlib
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
-DATA = Path("/home/claude/blp25_task1/data")
-OUT = Path("/home/claude/audit/annotation"); OUT.mkdir(parents=True, exist_ok=True)
+import os
+_HERE = pathlib.Path(__file__).resolve().parent
+_ROOT = _HERE.parent
+# Dataset location: env var BLP25_DATA, else ../blp25_task1, else ./blp25_task1
+_CANDIDATES = [os.environ.get("BLP25_DATA"), _ROOT / "blp25_task1",
+               _ROOT.parent / "blp25_task1"]
+_BASE = next((pathlib.Path(c) for c in _CANDIDATES if c and pathlib.Path(c).exists()), None)
+if _BASE is None:
+    raise SystemExit("Dataset not found. Clone https://github.com/AridHasan/blp25_task1 "
+                     "next to this repo, or set BLP25_DATA=/path/to/blp25_task1")
+
+DATA = _BASE / "data"
+OUT = _ROOT / "annotation"; OUT.mkdir(parents=True, exist_ok=True)
 SEED = 20260819
 
 ap = argparse.ArgumentParser()

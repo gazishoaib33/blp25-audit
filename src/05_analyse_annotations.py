@@ -14,10 +14,12 @@ Usage:  python 05_analyse_annotations.py --tag pilot
 """
 import pandas as pd, numpy as np, json, argparse
 from pathlib import Path
+import pathlib
+_ROOT = pathlib.Path(__file__).resolve().parent.parent
 from collections import Counter
 from openpyxl import load_workbook
 
-BASE = Path("/home/claude/audit")
+BASE = _ROOT
 ANN = BASE / "annotation"; RES = BASE / "results"; RES.mkdir(exist_ok=True)
 
 ap = argparse.ArgumentParser()

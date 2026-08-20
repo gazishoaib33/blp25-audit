@@ -20,8 +20,10 @@ import numpy as np
 from scipy import stats
 import json
 from pathlib import Path
+import pathlib
+_ROOT = pathlib.Path(__file__).resolve().parent.parent
 
-OUT = Path("/home/claude/audit/results"); OUT.mkdir(parents=True, exist_ok=True)
+OUT = _ROOT / "results"; OUT.mkdir(parents=True, exist_ok=True)
 N = 10200
 rng = np.random.default_rng(20260819)
 

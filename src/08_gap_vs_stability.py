@@ -13,9 +13,11 @@ paper can state the condition precisely instead of hand-waving.
 """
 import pandas as pd, numpy as np, json, itertools
 from pathlib import Path
+import pathlib
+_ROOT = pathlib.Path(__file__).resolve().parent.parent
 
-SYS = Path("/home/claude/audit/systems")
-RES = Path("/home/claude/audit/results")
+SYS = _ROOT / "results"
+RES = _ROOT / "results"
 rng = np.random.default_rng(20260819)
 B = 4000
 
