@@ -17,7 +17,7 @@ at all.**
 | 1 | Top-5 spread is 0.34–0.80 pp against a 95% CI half-width of 0.85–0.86 pp. **All five teams fall inside the leader's own interval** in every subtask. |
 | 2 | For the leader-vs-runner-up gap to be significant, two systems would have to disagree on **under 1.2%** of test items. Measured discordance across 45 real system pairs: **3.6–36.3%**. |
 | 3 | **Label noise does not explain the 0.736 plateau.** Three-way majority voting over κ=0.71 annotations yields gold labels ≈97% reliable — a 24-point gap to the best system. |
-| 4 | **Sexism is invisible to the metric.** 29 of 10,200 test items → max micro-F1 swing 0.28 pp, below the 0.44 pp sampling noise floor. 5 of our 10 systems never predict the class at all. |
+| 4 | **Sexism is invisible to the metric.** 29 of 10,200 test items → max micro-F1 swing 0.28 pp, below the 0.44 pp sampling noise floor. 5 of our 10 systems detect none of its 29 instances; the best detects 3. |
 | 5 | The system with the best macro-F1 *and* best Sexism-F1 ranks **4th of 10** on micro-F1. Optimising the reported metric demotes the system that handles rare classes best. |
 | 6 | **342 test items** carry a hate type but no target — a direct contradiction of the annotation scheme. |
 | 7 | Negative result, reported: the dataset is otherwise **clean** — zero duplicate-label conflicts, zero train/test leakage, zero degenerate items. |
@@ -38,6 +38,7 @@ python src/03_ceiling_and_metric.py      # annotation ceiling, class sensitivity
 python src/06_train_systems.py           # train 10 systems (~4 min, CPU)
 python src/07_discordance_and_stability.py
 python src/08_gap_vs_stability.py
+python src/09_verify_paper_claims.py   # independent check of all 32 paper claims
 ```
 
 Scripts expect the dataset at `blp25_task1/` alongside this repo; edit the `DATA` path at
