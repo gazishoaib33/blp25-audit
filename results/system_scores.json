@@ -1,0 +1,82 @@
+[
+  {
+    "system": "word-LR",
+    "micro_f1": 0.5852,
+    "macro_f1": 0.3087,
+    "f1_sexism": 0.0,
+    "f1_religious": 0.2041,
+    "secs": 12.7
+  },
+  {
+    "system": "word-LR-bal",
+    "micro_f1": 0.4984,
+    "macro_f1": 0.3408,
+    "f1_sexism": 0.0667,
+    "f1_religious": 0.2966,
+    "secs": 12.2
+  },
+  {
+    "system": "word-SVC",
+    "micro_f1": 0.5919,
+    "macro_f1": 0.3229,
+    "f1_sexism": 0.0625,
+    "f1_religious": 0.2204,
+    "secs": 2.0
+  },
+  {
+    "system": "word-NB",
+    "micro_f1": 0.522,
+    "macro_f1": 0.325,
+    "f1_sexism": 0.0377,
+    "f1_religious": 0.2635,
+    "secs": 1.0
+  },
+  {
+    "system": "char25-LR",
+    "micro_f1": 0.6732,
+    "macro_f1": 0.4616,
+    "f1_sexism": 0.0,
+    "f1_religious": 0.3699,
+    "secs": 55.6
+  },
+  {
+    "system": "char25-SVC",
+    "micro_f1": 0.6776,
+    "macro_f1": 0.4724,
+    "f1_sexism": 0.0606,
+    "f1_religious": 0.3586,
+    "secs": 11.5
+  },
+  {
+    "system": "char25-SVC-bal",
+    "micro_f1": 0.668,
+    "macro_f1": 0.5019,
+    "f1_sexism": 0.1154,
+    "f1_religious": 0.4189,
+    "secs": 12.2
+  },
+  {
+    "system": "char36-LR",
+    "micro_f1": 0.6682,
+    "macro_f1": 0.4547,
+    "f1_sexism": 0.0,
+    "f1_religious": 0.3624,
+    "secs": 67.5
+  },
+  {
+    "system": "char14-SGD",
+    "micro_f1": 0.6606,
+    "macro_f1": 0.4499,
+    "f1_sexism": 0.0,
+    "f1_religious": 0.3378,
+    "secs": 8.5
+  },
+  {
+    "system": "word-RF",
+    "micro_f1": 0.5989,
+    "macro_f1": 0.2318,
+    "f1_sexism": 0.0,
+    "f1_religious": 0.0216,
+    "secs": 18.6
+  }
+]

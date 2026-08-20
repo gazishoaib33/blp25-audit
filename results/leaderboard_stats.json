@@ -1,0 +1,51 @@
+{
+  "1A_wilson": {
+    "spread_pp": 0.34,
+    "ci_halfwidth_pp": 0.855,
+    "n_overlapping": 5
+  },
+  "1B_wilson": {
+    "spread_pp": 0.39,
+    "ci_halfwidth_pp": 0.856,
+    "n_overlapping": 5
+  },
+  "1C_wilson": {
+    "spread_pp": 0.8,
+    "ci_halfwidth_pp": 0.852,
+    "n_overlapping": 5
+  },
+  "1A_mcnemar_max_discordance": {
+    "gap_pp": 0.17,
+    "gap_items": 17.3,
+    "max_discordant_items": 78.3,
+    "max_discordant_pct": 0.767
+  },
+  "1B_mcnemar_max_discordance": {
+    "gap_pp": 0.21,
+    "gap_items": 21.4,
+    "max_discordant_items": 119.4,
+    "max_discordant_pct": 1.171
+  },
+  "1C_mcnemar_max_discordance": {
+    "gap_pp": 0.14,
+    "gap_items": 14.3,
+    "max_discordant_items": 53.1,
+    "max_discordant_pct": 0.52
+  },
+  "1A_montecarlo": {
+    "high agreement (5% discordant)": 0.4536,
+    "typical (15% discordant)": 0.6635,
+    "low agreement (25% discordant)": 0.7378
+  },
+  "1B_montecarlo": {
+    "high agreement (5% discordant)": 0.3534,
+    "typical (15% discordant)": 0.5923,
+    "low agreement (25% discordant)": 0.6779
+  },
+  "1C_montecarlo": {
+    "high agreement (5% discordant)": 0.5089,
+    "typical (15% discordant)": 0.7015,
+    "low agreement (25% discordant)": 0.7672
+  },
+  "se_single_score_pp": 0.437
+}

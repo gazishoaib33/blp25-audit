@@ -1,0 +1,103 @@
+{
+  "ceiling": {
+    "type (1A)": {
+      "kappa": 0.71,
+      "Po": 0.8227,
+      "alpha_uniform": 0.9061,
+      "alpha_correlated": 0.9017,
+      "ceiling_uniform": 0.9752,
+      "ceiling_correlated": 0.9729
+    },
+    "target (1B)": {
+      "kappa": 0.79,
+      "Po": 0.8716,
+      "alpha_uniform": 0.9331,
+      "alpha_correlated": 0.9311,
+      "ceiling_uniform": 0.9872,
+      "ceiling_correlated": 0.9864
+    },
+    "severity": {
+      "kappa": 0.84,
+      "Po": 0.9022,
+      "alpha_uniform": 0.9496,
+      "alpha_correlated": 0.9484,
+      "ceiling_uniform": 0.9926,
+      "ceiling_correlated": 0.9923
+    }
+  },
+  "metric_sensitivity": [
+    {
+      "cls": "None",
+      "n": 5751,
+      "max_swing_pp": 56.382,
+      "swing_in_SE": 129.026
+    },
+    {
+      "cls": "Abusive",
+      "n": 2312,
+      "max_swing_pp": 22.667,
+      "swing_in_SE": 51.871
+    },
+    {
+      "cls": "Political Hate",
+      "n": 1220,
+      "max_swing_pp": 11.961,
+      "swing_in_SE": 27.371
+    },
+    {
+      "cls": "Profane",
+      "n": 709,
+      "max_swing_pp": 6.951,
+      "swing_in_SE": 15.907
+    },
+    {
+      "cls": "Religious Hate",
+      "n": 179,
+      "max_swing_pp": 1.755,
+      "swing_in_SE": 4.016
+    },
+    {
+      "cls": "Sexism",
+      "n": 29,
+      "max_swing_pp": 0.284,
+      "swing_in_SE": 0.651
+    }
+  ],
+  "coherence_by_type": {
+    "Abusive": {
+      "n": 2312,
+      "sev_little": 646,
+      "sev_little_pct": 27.9,
+      "target_none": 209,
+      "target_none_pct": 9.0
+    },
+    "Political Hate": {
+      "n": 1220,
+      "sev_little": 263,
+      "sev_little_pct": 21.6,
+      "target_none": 61,
+      "target_none_pct": 5.0
+    },
+    "Profane": {
+      "n": 709,
+      "sev_little": 41,
+      "sev_little_pct": 5.8,
+      "target_none": 50,
+      "target_none_pct": 7.1
+    },
+    "Religious Hate": {
+      "n": 179,
+      "sev_little": 29,
+      "sev_little_pct": 16.2,
+      "target_none": 19,
+      "target_none_pct": 10.6
+    },
+    "Sexism": {
+      "n": 29,
+      "sev_little": 7,
+      "sev_little_pct": 24.1,
+      "target_none": 3,
+      "target_none_pct": 10.3
+    }
+  }
+}

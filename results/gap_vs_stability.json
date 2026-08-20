@@ -1,0 +1,28 @@
+{
+  "pairs": {
+    "n_pairs": 45,
+    "n_unstable": 1,
+    "smallest_stable_gap_pp": 0.441,
+    "largest_unstable_gap_pp": 0.02
+  },
+  "nearest_pair": {
+    "winner": "char36-LR",
+    "loser": "char25-SVC-bal",
+    "gap_pp": 0.02,
+    "disc_items": 1020,
+    "disc_frac": 0.1,
+    "win_rate": 0.5148
+  },
+  "min_detectable": {
+    "lowest observed": 0.368,
+    "median, near-tied pairs": 0.575,
+    "median, all pairs": 0.98,
+    "highest observed": 1.169
+  },
+  "blp_gaps_pp": {
+    "1A": 0.17,
+    "1B": 0.21,
+    "1C": 0.14
+  },
+  "verdict": "All three BLP top-2 gaps fall below the minimum detectable difference implied by the lowest pairwise discordance we measured (3.6% of items)."
+}

@@ -1,0 +1,58 @@
+{
+  "discordance": {
+    "median_disagree": 0.3199,
+    "min_disagree": 0.0439,
+    "max_disagree": 0.4848,
+    "median_mcnemar_disc_frac": 0.2547,
+    "close_pairs_n": 10,
+    "close_median_disagree": 0.1104,
+    "close_median_mcnemar_frac": 0.0878
+  },
+  "mcnemar": {
+    "n_pairs": 45,
+    "n_significant": 42,
+    "smallest_significant_gap_pp": 0.441,
+    "largest_nonsignificant_gap_pp": 0.706
+  },
+  "bootstrap": {
+    "B": 2000,
+    "top5": [
+      {
+        "system": "char25-SVC",
+        "micro": 0.6776,
+        "win_pct": 98.7
+      },
+      {
+        "system": "char25-LR",
+        "micro": 0.6732,
+        "win_pct": 1.3
+      },
+      {
+        "system": "char36-LR",
+        "micro": 0.6682,
+        "win_pct": 0.0
+      },
+      {
+        "system": "char25-SVC-bal",
+        "micro": 0.668,
+        "win_pct": 0.0
+      },
+      {
+        "system": "char14-SGD",
+        "micro": 0.6606,
+        "win_pct": 0.0
+      }
+    ]
+  },
+  "micro_vs_macro": {
+    "kendall_tau": 0.4667,
+    "kendall_p": 0.0726,
+    "spearman_rho": 0.697,
+    "best_macro_system": "char25-SVC-bal",
+    "best_macro_micro_rank": 4,
+    "best_sexism_system": "char25-SVC-bal",
+    "best_sexism_micro_rank": 4,
+    "n_systems_zero_sexism": 5,
+    "n_systems": 10
+  }
+}

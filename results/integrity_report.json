@@ -1,0 +1,125 @@
+{
+  "distributions": {
+    "1A/train": {
+      "None": 19954,
+      "Abusive": 8212,
+      "Political Hate": 4227,
+      "Profane": 2331,
+      "Religious Hate": 676,
+      "Sexism": 122
+    },
+    "1A/dev": {
+      "None": 1451,
+      "Abusive": 564,
+      "Political Hate": 291,
+      "Profane": 157,
+      "Religious Hate": 38,
+      "Sexism": 11
+    },
+    "1A/dev_test_with_labels": {
+      "None": 1447,
+      "Abusive": 549,
+      "Political Hate": 283,
+      "Profane": 185,
+      "Religious Hate": 40,
+      "Sexism": 8
+    },
+    "1A/test_with_labels": {
+      "None": 5751,
+      "Abusive": 2312,
+      "Political Hate": 1220,
+      "Profane": 709,
+      "Religious Hate": 179,
+      "Sexism": 29
+    },
+    "1B/train": {
+      "None": 21190,
+      "Individual": 5646,
+      "Organization": 3846,
+      "Community": 2635,
+      "Society": 2205
+    },
+    "1B/dev": {
+      "None": 1536,
+      "Individual": 364,
+      "Organization": 292,
+      "Community": 179,
+      "Society": 141
+    },
+    "1B/dev_test_with_labels": {
+      "None": 1528,
+      "Individual": 391,
+      "Organization": 292,
+      "Community": 159,
+      "Society": 142
+    },
+    "1B/test_with_labels": {
+      "None": 6093,
+      "Individual": 1571,
+      "Organization": 1152,
+      "Community": 759,
+      "Society": 625
+    },
+    "1C/test/hate_type": {
+      "None": 5751,
+      "Abusive": 2312,
+      "Political Hate": 1220,
+      "Profane": 709,
+      "Religious Hate": 179,
+      "Sexism": 29
+    },
+    "1C/test/hate_severity": {
+      "Little to None": 6737,
+      "Mild": 2001,
+      "Severe": 1462
+    },
+    "1C/test/to_whom": {
+      "None": 6093,
+      "Individual": 1571,
+      "Organization": 1152,
+      "Community": 759,
+      "Society": 625
+    }
+  },
+  "duplicates": {
+    "1A": {
+      "rows": 50746,
+      "dup_rows": 4,
+      "conflicting_texts": 0,
+      "conflicting_rows": 0
+    },
+    "1B": {
+      "rows": 50746,
+      "dup_rows": 4,
+      "conflicting_texts": 0,
+      "conflicting_rows": 0
+    }
+  },
+  "leakage": {
+    "1A": {
+      "n_leaked": 0,
+      "n_test": 10200,
+      "pct": 0.0
+    },
+    "1B": {
+      "n_leaked": 0,
+      "n_test": 10200,
+      "pct": 0.0
+    }
+  },
+  "degenerate": {
+    "empty": 0,
+    "le2_words": 0,
+    "no_bangla": 0,
+    "median_words": 9.0
+  },
+  "schema_coherence_1C": {
+    "type_none_sev_not_little": 0,
+    "type_none_target_not_none": 0,
+    "type_not_none_target_none": 342,
+    "type_not_none_sev_little": 986,
+    "total_incoherent": 1185,
+    "n_test": 10200,
+    "pct": 11.62
+  }
+}
