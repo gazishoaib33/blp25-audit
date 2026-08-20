@@ -4,6 +4,6 @@ message: "If you use this audit or its code, please cite it."
 authors:
   - family-names: Shoaib
     given-names: Gazi
-repository-code: "https://github.com/USERNAME/blp25-audit"
+repository-code: "https://github.com/gazishoaib33/blp25-audit"
 license: MIT
 year: 2026

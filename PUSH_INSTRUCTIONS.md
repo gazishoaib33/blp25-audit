@@ -14,7 +14,7 @@ initial commit on GitHub's side will cause a conflict.
 
 ```bash
 cd blp25-audit
-git remote add origin https://github.com/YOUR_USERNAME/blp25-audit.git
+git remote add origin https://github.com/gazishoaib33/blp25-audit.git
 git branch -M main
 git push -u origin main
 ```
