@@ -1,0 +1,24 @@
+# Never commit the annotation key — annotators must stay blind
+annotation/*_WITH_GOLD.csv
+annotation/audit_sample_*.csv
+
+# Dataset is not redistributed (CC BY-NC-SA 4.0)
+blp25_task1/
+data/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.blg
+*.bbl
+*.synctex.gz
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store

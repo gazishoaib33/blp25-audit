@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "Indistinguishable at the Top: A Statistical Audit of the BLP-2025 Bangla Hate Speech Shared Task"
+message: "If you use this audit or its code, please cite it."
+authors:
+  - family-names: Shoaib
+    given-names: Gazi
+repository-code: "https://github.com/USERNAME/blp25-audit"
+license: MIT
+year: 2026
