@@ -1,25 +1,22 @@
 % ===========================================================================
-%  CITATION VERIFICATION STATUS  -  READ BEFORE SUBMITTING
+%  CITATION VERIFICATION STATUS
 %
-%  [VERIFIED]   hasan2025blptask1, raihan2025blptask2, card2020power
-%               - fetched from the ACL Anthology, 2026-08-20/21
+%  [VERIFIED 2026-08-21] All 11 modern references were fetched from the
+%  publisher of record (ACL Anthology, CIDR, DBLP, PLOS) and their author
+%  lists, titles, pages and DOIs corrected where they differed from the
+%  first draft. Four corrections were needed:
 %
-%  [UNVERIFIED] everything else. These were written from memory. Titles and
-%  years are very likely right; author lists, page numbers and exact venue
-%  strings are NOT guaranteed. Replace each with the Anthology's own BibTeX
-%  (every Anthology page has a "BibTeX" button that gives you the entry):
+%    bowman2021benchmarking   "George Dahl", not "George E. Dahl"
+%    bhattacharjee2022...     "Ahmad, Wasi" not "Wasi Uddin";
+%                             "Mubasshir, Kazi Samin" not "Samin, Kazi"
+%    vidgen2020directions     published title includes ", a systematic review"
+%                             (the first draft used the arXiv title)
+%    jin2026broken            full author list recovered: Jin, Choi, Zhu, Kang
 %
-%    dror2018hitchhiker      aclanthology.org/P18-1128/
-%    reimers2017reporting    aclanthology.org/D17-1035/
-%    bowman2021benchmarking  aclanthology.org/2021.naacl-main.385/
-%    sap2019racialbias       aclanthology.org/P19-1163/
-%    bhattacharjee2022...    aclanthology.org/2022.findings-naacl.98/
-%
-%  Not in the Anthology - check at the publisher:
-%    jin2026broken            CIDR 2026 (vldb.org/cidrdb/papers/2026/p5-jin.pdf)
-%    northcutt2021labelerrors NeurIPS 2021 Datasets & Benchmarks
-%    vidgen2020directions     PLOS ONE 15(12)
-%    fleiss1971, wilson1927, mcnemar1947   classic stats papers
+%  [STANDARD] The three classical statistics references below are given in
+%  their canonical form. They are stable, universally cited entries, but
+%  spot-check them against the journal if you want total certainty:
+%    fleiss1971, wilson1927, mcnemar1947
 % ===========================================================================
 
 % [VERIFIED 2026-08-20 against aclanthology.org/2025.banglalp-1.32/]
@@ -54,12 +51,17 @@
     pages     = "373--387"
 }
 
+% [VERIFIED 2026-08-21 against cidrdb.org/cidr2026/papers.html]
 @inproceedings{jin2026broken,
-  title     = {Text-to-{SQL} Benchmarks are Broken: An In-Depth Analysis of Annotation Errors},
-  author    = {{Jin} and others},
-  booktitle = {Conference on Innovative Data Systems Research (CIDR)},
-  year      = {2026},
-  url       = {https://www.vldb.org/cidrdb/papers/2026/p5-jin.pdf}
+    title     = "Text-to-{SQL} Benchmarks are Broken: An In-Depth Analysis of
+                 Annotation Errors",
+    author    = "Jin, Tengjun  and Choi, Yoojin  and Zhu, Yuxuan  and
+                 Kang, Daniel",
+    booktitle = "Proceedings of the 16th Conference on Innovative Data Systems
+                 Research (CIDR)",
+    year      = "2026",
+    address   = "Chaminade, CA, USA",
+    url       = "https://www.vldb.org/cidrdb/papers/2026/p5-jin.pdf"
 }
 
 % [VERIFIED 2026-08-21 against aclanthology.org/2020.emnlp-main.745/]
@@ -78,63 +80,117 @@
     pages     = "9263--9274"
 }
 
+% [VERIFIED 2026-08-21 against aclanthology.org/P18-1128/]
 @inproceedings{dror2018hitchhiker,
-  title     = {The Hitchhiker's Guide to Testing Statistical Significance in
-               Natural Language Processing},
-  author    = {Dror, Rotem and Baumer, Gili and Shlomov, Segev and Reichart, Roi},
-  booktitle = {Proceedings of ACL},
-  year      = {2018}
+    title     = "The Hitchhiker{'}s Guide to Testing Statistical Significance in
+                 Natural Language Processing",
+    author    = "Dror, Rotem  and Baumer, Gili  and Shlomov, Segev  and
+                 Reichart, Roi",
+    booktitle = "Proceedings of the 56th Annual Meeting of the Association for
+                 Computational Linguistics (Volume 1: Long Papers)",
+    month     = jul,
+    year      = "2018",
+    address   = "Melbourne, Australia",
+    publisher = "Association for Computational Linguistics",
+    url       = "https://aclanthology.org/P18-1128/",
+    doi       = "10.18653/v1/P18-1128",
+    pages     = "1383--1392"
 }
 
+% [VERIFIED 2026-08-21 against aclanthology.org/D17-1035/]
 @inproceedings{reimers2017reporting,
-  title     = {Reporting Score Distributions Makes a Difference: Performance
-               Study of {LSTM}-networks for Sequence Tagging},
-  author    = {Reimers, Nils and Gurevych, Iryna},
-  booktitle = {Proceedings of EMNLP},
-  year      = {2017}
+    title     = "Reporting Score Distributions Makes a Difference: Performance
+                 Study of {LSTM}-networks for Sequence Tagging",
+    author    = "Reimers, Nils  and Gurevych, Iryna",
+    booktitle = "Proceedings of the 2017 Conference on Empirical Methods in
+                 Natural Language Processing",
+    month     = sep,
+    year      = "2017",
+    address   = "Copenhagen, Denmark",
+    publisher = "Association for Computational Linguistics",
+    url       = "https://aclanthology.org/D17-1035/",
+    doi       = "10.18653/v1/D17-1035",
+    pages     = "338--348"
 }
 
+% [VERIFIED 2026-08-21 against dblp.org/rec/conf/nips/NorthcuttAM21]
 @inproceedings{northcutt2021labelerrors,
-  title     = {Pervasive Label Errors in Test Sets Destabilize Machine Learning
-               Benchmarks},
-  author    = {Northcutt, Curtis G. and Athalye, Anish and Mueller, Jonas},
-  booktitle = {NeurIPS Datasets and Benchmarks Track},
-  year      = {2021}
+    title     = "Pervasive Label Errors in Test Sets Destabilize Machine
+                 Learning Benchmarks",
+    author    = "Northcutt, Curtis G.  and Athalye, Anish  and Mueller, Jonas",
+    booktitle = "Proceedings of the Neural Information Processing Systems Track
+                 on Datasets and Benchmarks",
+    year      = "2021",
+    url       = "https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/f2217062e9a397a1dca429e7d70bc6ca-Abstract-round1.html"
 }
 
+% [VERIFIED 2026-08-21 against aclanthology.org/2021.naacl-main.385/]
+% NOTE: the Anthology lists "George Dahl", not "George E. Dahl" as first drafted.
 @inproceedings{bowman2021benchmarking,
-  title     = {What Will it Take to Fix Benchmarking in Natural Language
-               Understanding?},
-  author    = {Bowman, Samuel R. and Dahl, George E.},
-  booktitle = {Proceedings of NAACL-HLT},
-  year      = {2021}
+    title     = "What Will it Take to Fix Benchmarking in Natural Language
+                 Understanding?",
+    author    = "Bowman, Samuel R.  and Dahl, George",
+    booktitle = "Proceedings of the 2021 Conference of the North American Chapter
+                 of the Association for Computational Linguistics: Human Language
+                 Technologies",
+    month     = jun,
+    year      = "2021",
+    address   = "Online",
+    publisher = "Association for Computational Linguistics",
+    url       = "https://aclanthology.org/2021.naacl-main.385/",
+    doi       = "10.18653/v1/2021.naacl-main.385",
+    pages     = "4843--4855"
 }
 
+% [VERIFIED 2026-08-21 against aclanthology.org/P19-1163/]
 @inproceedings{sap2019racialbias,
-  title     = {The Risk of Racial Bias in Hate Speech Detection},
-  author    = {Sap, Maarten and Card, Dallas and Gabriel, Saadia and
-               Choi, Yejin and Smith, Noah A.},
-  booktitle = {Proceedings of ACL},
-  year      = {2019}
+    title     = "The Risk of Racial Bias in Hate Speech Detection",
+    author    = "Sap, Maarten  and Card, Dallas  and Gabriel, Saadia  and
+                 Choi, Yejin  and Smith, Noah A.",
+    booktitle = "Proceedings of the 57th Annual Meeting of the Association for
+                 Computational Linguistics",
+    month     = jul,
+    year      = "2019",
+    address   = "Florence, Italy",
+    publisher = "Association for Computational Linguistics",
+    url       = "https://aclanthology.org/P19-1163/",
+    doi       = "10.18653/v1/P19-1163",
+    pages     = "1668--1678"
 }
 
+% [VERIFIED 2026-08-21 against journals.plos.org 10.1371/journal.pone.0243300]
+% NOTE: the PUBLISHED title differs from the arXiv version - it includes
+% ", a systematic review". The first draft used the arXiv title.
 @article{vidgen2020directions,
-  title   = {Directions in Abusive Language Training Data: Garbage In, Garbage Out},
-  author  = {Vidgen, Bertie and Derczynski, Leon},
-  journal = {PLOS ONE},
-  volume  = {15},
-  number  = {12},
-  year    = {2020}
+    title   = "Directions in abusive language training data, a systematic
+               review: Garbage in, garbage out",
+    author  = "Vidgen, Bertie  and Derczynski, Leon",
+    journal = "PLOS ONE",
+    volume  = "15",
+    number  = "12",
+    pages   = "e0243300",
+    year    = "2020",
+    doi     = "10.1371/journal.pone.0243300"
 }
 
+% [VERIFIED 2026-08-21 against aclanthology.org/2022.findings-naacl.98/]
+% NOTE: two author names were wrong in the first draft - the Anthology lists
+% "Ahmad, Wasi" (not "Wasi Uddin") and "Mubasshir, Kazi Samin" (not "Samin, Kazi").
 @inproceedings{bhattacharjee2022banglabert,
-  title     = {{B}angla{BERT}: Language Model Pretraining and Benchmarks for
-               Low-Resource Language Understanding Evaluation in {B}angla},
-  author    = {Bhattacharjee, Abhik and Hasan, Tahmid and Ahmad, Wasi Uddin and
-               Samin, Kazi and Islam, Md Saiful and Iqbal, Anindya and
-               Rahman, M. Sohel and Shahriyar, Rifat},
-  booktitle = {Findings of NAACL},
-  year      = {2022}
+    title     = "{B}angla{BERT}: Language Model Pretraining and Benchmarks for
+                 Low-Resource Language Understanding Evaluation in {B}angla",
+    author    = "Bhattacharjee, Abhik  and Hasan, Tahmid  and Ahmad, Wasi  and
+                 Mubasshir, Kazi Samin  and Islam, Md Saiful  and
+                 Iqbal, Anindya  and Rahman, M. Sohel  and Shahriyar, Rifat",
+    booktitle = "Findings of the Association for Computational Linguistics:
+                 NAACL 2022",
+    month     = jul,
+    year      = "2022",
+    address   = "Seattle, United States",
+    publisher = "Association for Computational Linguistics",
+    url       = "https://aclanthology.org/2022.findings-naacl.98/",
+    doi       = "10.18653/v1/2022.findings-naacl.98",
+    pages     = "1318--1327"
 }
 
 @article{fleiss1971,
