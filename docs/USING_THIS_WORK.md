@@ -55,8 +55,10 @@ claiming results; very few describe changing their mind.
 ## 3. Push the repository
 
 Makes the work linkable, and a public repo with real commits is evidence in a way
-a PDF isn't. **Keep it private until you've submitted to ARR** — a public repo
-under your name, linked from a double-blind submission, breaks anonymity.
+a PDF isn't. **You can make it public whenever you like** — ARR dropped its
+anonymity period in February 2024. Just make sure the *submitted PDF* stays
+anonymised and doesn't link to the repo (that is what `main.tex` is for, versus
+`main_authored.tex`).
 
 See `PUSH_INSTRUCTIONS.md`. One command once the repo exists.
 

@@ -60,11 +60,15 @@ submitting, check that:
 
 Switch to `[final]` only for camera-ready.
 
-### 5. Post the preprint — but check the ARR policy first
+### 5. Post the preprint — you are free to do this any time
 
-ARR has an anonymity period. Posting to arXiv **before** it opens can disqualify a
-submission. Read the current ARR policy page and time the preprint accordingly.
-Once permitted, arXiv gives you something citable on your application immediately.
+**Correction to earlier advice:** ARR removed its anonymity period as of the
+15 February 2024 deadlines. There is now *no* restriction on posting or discussing
+a non-anonymous preprint while the work is under review. Your ARR *submission* must
+still be anonymised (that is what `main.tex` is for), but the preprint itself can go
+up whenever you like.
+
+The real obstacle is arXiv endorsement, not ARR. See `WHERE_TO_POST.md`.
 
 ---
 
