@@ -84,7 +84,7 @@ differ carry no majority and are reported separately as evidence of ill-posed it
 ## Repository layout
 
 ```
-src/        analysis pipeline, scripts 01–08
+src/        analysis pipeline, scripts 01–09
 paper/      LaTeX source, figures, compiled PDF
 docs/       findings, annotation guideline, submission checklist
 results/    JSON and CSV outputs

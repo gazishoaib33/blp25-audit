@@ -39,8 +39,9 @@ differ by 0.28 points of micro-F1---below the 0.44-point sampling noise floor.
 Training ten systems to obtain real predictions, we measure pairwise discordance
 of 3.6--36.3\% and show that the minimum detectable gap is 0.37\,pp even in the
 best case---above every reported top-two gap---while a pair separated by
-0.02\,pp wins only 51.5\% of bootstrap resamples. Five of our ten systems never
-predict \textsc{Sexism} at all. We release all audit code.
+0.02\,pp wins only 51.5\% of bootstrap resamples. No system in our pool detects
+more than 3 of the 29 sexist comments, and five detect none. We release all
+audit code.
 \end{abstract}
 
 \section{Introduction}
@@ -238,12 +239,14 @@ transition: the one pair inside the BLP range wins 51.5\% of resamples, while
 every pair we could resolve had a gap of at least 0.44\,pp.
 
 \paragraph{Micro-F1 hides the systems that behave best.} Five of our ten systems
-score exactly $0.000$ F1 on \textsc{Sexism}: they never predict the class at
-all. The system with the best macro-F1 (0.5019) and much the best
-\textsc{Sexism} F1 (0.115) ranks only \emph{fourth} of ten on micro-F1. Micro
-and macro rankings agree weakly (Kendall $\tau=0.467$, $p=.073$). Optimising the
-reported metric does not merely fail to reward rare-class detection---in our
-pool it actively demotes the system that does it best.
+score exactly $0.000$ F1 on \textsc{Sexism}, detecting none of its 29 instances;
+the best detects 3, for an F1 of 0.115. (Only one system never emits the label
+at all; the others emit it but never correctly.) That best-performing system on
+\textsc{Sexism} also has the best macro-F1, 0.5019---and ranks only
+\emph{fourth} of ten on micro-F1. Micro and macro rankings agree weakly (Kendall
+$\tau=0.467$, $p=.073$). Optimising the reported metric does not merely fail to
+reward rare-class detection: in our pool it actively demotes the system that
+does it best.
 
 \section{Is Annotation Noise the Ceiling?}
 \label{sec:ceiling}

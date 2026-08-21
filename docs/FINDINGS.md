@@ -1,8 +1,9 @@
 # BLP-2025 Task 1 — Audit Findings (Stage 1, computational)
 
 **Gazi Shoaib · 19 August 2026**
-All numbers below are computed from the released data. Nothing here required manual annotation.
-Reproduce with `python 01_data_integrity.py`, `02_leaderboard_stats.py`, `03_ceiling_and_metric.py`.
+All numbers below are computed from the released data and the ten systems trained in `06`.
+Nothing here required manual annotation.
+Reproduce with scripts `01`–`08`; `09_verify_paper_claims.py` independently re-checks all 32 numbers.
 
 ---
 
@@ -40,7 +41,7 @@ In all three subtasks, **5 of 5 teams have confidence intervals overlapping the 
 - 1B: **119 items (1.17%)**
 - 1C: **53 items (0.52%)**
 
-Two independently built systems scoring ~73.5% on a 6-way task disagree on 10–20% of items. The required discordance is **one to two orders of magnitude too low.** No top-2 gap can be significant.
+**This was originally an assumption.** It is now measured (Finding 5): across 45 real system pairs, McNemar discordance ranges 3.6–36.3%. The lowest value observed anywhere is 3.6%, roughly five times the ~0.8% the gap would require. No top-2 gap can be significant.
 
 **Monte-Carlo.** Simulating two systems of *identical* true skill, the probability of seeing a gap at least as large as the observed one by chance alone:
 
@@ -119,7 +120,39 @@ By hate type:
 
 ---
 
-## Finding 5 (negative, and worth reporting) — the dataset is clean
+## Finding 5 — Measured discordance, and the claim narrowed
+
+Scripts `06`–`08` train ten systems on the official split to obtain real predictions,
+replacing the assumption above with measurement.
+
+| Quantity | Value |
+|---|---|
+| Pairwise prediction disagreement (45 pairs) | median 32.0%, range 4.4–48.5% |
+| McNemar discordance $b+c$ | median 25.5%, range **3.6–36.3%** |
+| Near-tied pairs (within 1 pp) | median discordance 8.8% (895 items) |
+| Minimum detectable gap at lowest observed discordance | **0.37 pp** |
+| BLP top-2 gaps | 0.17 / 0.21 / 0.14 pp — all below it |
+
+**A result that forced the claim to narrow.** Our own top two systems differ by 0.44 pp
+with only 4.1% discordance and hold their order in 98.7% of 4,000 bootstrap resamples.
+So "small gaps are meaningless" is *false* as a slogan. The defensible claim is
+conditional: a gap is uninformative when smaller than $1.96\sqrt{b+c}/n$. The pair
+separated by 0.02 pp wins **51.5%** of resamples — a coin flip.
+
+## Finding 6 — Micro-F1 demotes the system that handles rare classes best
+
+Of ten systems, five detect **none** of the 29 sexist comments; the best detects **3**.
+The system with the best macro-F1 (0.5019) *and* the best Sexism F1 (0.115) ranks only
+**fourth of ten** on micro-F1. Micro and macro rankings agree weakly (Kendall
+$\tau = 0.467$, $p = .073$).
+
+*(Correction: an earlier draft said five systems "never predict Sexism at all." F1 = 0
+means zero true positives, not zero predictions — only one system never emits the label.
+The verification suite in `09` caught this.)*
+
+---
+
+## Finding 7 (negative, and worth reporting) — the dataset is clean
 
 | Check | Result |
 |---|---|
@@ -133,7 +166,7 @@ Compare Jin et al. (CIDR 2026): 52.8% error in BIRD Mini-Dev, 66.1% in Spider 2.
 
 ---
 
-## Finding 6 — A reproducibility hazard worth a footnote
+## Finding 8 — A reproducibility hazard worth a footnote
 
 `pandas.read_csv` treats the literal string `"None"` as `NaN` by default. Since `None` is the **majority class** (56.4% of 1A, 59.7% of 1B), a naive load silently deletes it. I hit this in my own first run: it turned a real 11.6% coherence rate into a spurious 66%.
 
@@ -159,7 +192,7 @@ Any participant who loaded the TSVs naively trained on a corrupted label set. Wo
 
 ## What Stage 2 needs from you
 
-Findings 1–6 are **done and defensible today**. They alone are close to a short paper. Stage 2 (manual re-annotation) upgrades it from a statistics note to a full audit:
+Findings 1–8 are **done and defensible today**, and are what the submitted paper rests on. Stage 2 (manual re-annotation) upgrades it from a statistics note to a full audit:
 
 - 3 blind annotators (you + 2 native-speaker classmates)
 - 124-item pilot first → check κ, refine the guideline → then the 495-item full set
