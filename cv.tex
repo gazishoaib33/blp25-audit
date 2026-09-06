@@ -1,0 +1,132 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\definecolor{rule}{HTML}{999999}
+\definecolor{ink}{HTML}{111111}
+\color{ink}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\titleformat{\section}{\normalsize\bfseries\scshape}{}{0pt}{}[\vspace{-7pt}\textcolor{rule}{\rule{\textwidth}{0.4pt}}]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+\newcommand{\entry}[4]{%
+  \textbf{#1}\hfill{#2}\\
+  \textit{#3}\hfill{#4}\\[2pt]}
+
+\setlist[itemize]{leftmargin=12pt, itemsep=0.8pt, topsep=1.5pt, parsep=0pt}
+
+\begin{document}
+
+% ---------- header ----------
+\begin{center}
+  {\LARGE\bfseries Gazi Shoaib}\\[4pt]
+  Jahangirnagar University, Savar, Dhaka, Bangladesh\\[2pt]
+  \href{mailto:gazishoaib953@gmail.com}{gazishoaib953@gmail.com} \;\textbar\;
+  +880 1865 283150 \;\textbar\;
+  \href{https://github.com/gazishoaib33}{github.com/gazishoaib33}\\[1pt]
+  {\small ORCID \href{https://orcid.org/0009-0002-8435-4983}{0009-0002-8435-4983}}
+\end{center}
+
+\vspace{2pt}
+
+% ---------- research interests ----------
+\section{Research Interests}
+Evaluation methodology and benchmark reliability in NLP; low-resource language
+processing, particularly Bangla; interpretable machine learning for health
+applications.
+
+% ---------- education ----------
+\section{Education}
+
+\entry{M.Sc.\ in Applied Statistics and Data Science}{May 2024 -- Jan 2026}
+{Jahangirnagar University, Savar, Dhaka}{CGPA 3.19 / 4.00}
+\begin{itemize}
+\item Thesis: \textit{Explainable Machine Learning for Mental Health Risk
+      Prediction}. Interpretable gradient-boosted model (87\% accuracy) with SHAP
+      and LIME attribution; threshold optimised to minimise false negatives.
+\end{itemize}
+\vspace{2pt}
+
+\entry{B.Sc.\ in Computer Science and Engineering}{May 2019 -- Nov 2023}
+{North South University, Dhaka}{CGPA 3.00 / 4.00}
+
+% ---------- research ----------
+\section{Research}
+
+\textbf{Preprints and Manuscripts}
+\begin{itemize}
+\item \textbf{Gazi, S.} (2026). ``Indistinguishable at the Top: A Statistical
+      Audit of the BLP-2025 Bangla Hate Speech Shared Task.''
+      \textit{Preprint}, Zenodo.
+      \href{https://doi.org/10.5281/zenodo.22472234}{doi:10.5281/zenodo.22472234}\\
+      Code: \href{https://github.com/gazishoaib33/blp25-audit}{github.com/gazishoaib33/blp25-audit}
+      \begin{itemize}
+      \item Showed the top five systems in all three subtasks are statistically
+            indistinguishable, and trained ten systems to measure the pairwise
+            discordance the argument depends on across 45 system pairs.
+      \item Estimated the annotation ceiling from reported inter-annotator
+            agreement and \emph{rejected} the hypothesis that label noise
+            explains the observed performance plateau.
+      \item Demonstrated that the task's micro-F1 metric cannot resolve its
+            rarest class: at 29 of 10,200 test items, the metric's maximum
+            response falls below the sampling noise floor.
+      \end{itemize}
+\end{itemize}
+
+\vspace{3pt}
+\textbf{Research Experience}\\[3pt]
+\entry{Research and Development Intern}{May 2024 -- Nov 2024}
+{Penta Global Ltd., Dhaka}{}
+\begin{itemize}
+\item Built NLP pipelines for sentiment analysis, named entity recognition, and
+      topic modelling over real-world Bangla and English text.
+\item Trained and evaluated classification models; documented experimental
+      protocol and presented findings to the technical team.
+\end{itemize}
+
+% ---------- projects ----------
+\section{Selected Technical Projects}
+\begin{itemize}
+\item \textbf{Natural-language-to-SQL generation with large language models.}
+      FastAPI service using few-shot prompting and schema injection across three
+      domain schemas; approximately 79\% execution accuracy on the Spider
+      benchmark at under 900\,ms latency.
+\item \textbf{Automated meteorological data pipeline.} Hourly ETL over live
+      weather data for 12 Bangladeshi cities with a derived heat-index and
+      risk-scoring layer, persisted to SQLite.
+\item \textbf{Credit risk classification.} End-to-end pipeline (85\% accuracy)
+      with feature attribution identifying the dominant risk factors.
+\end{itemize}
+
+% ---------- skills ----------
+\section{Technical Skills}
+\begin{itemize}
+\item \textbf{Programming:} Python, SQL, C; Git, \LaTeX, Jupyter, REST APIs,
+      SQLite, MySQL, Power BI
+\item \textbf{Machine learning:} scikit-learn, XGBoost, TensorFlow;
+      classification, regression, clustering, time-series forecasting;
+      interpretability with SHAP and LIME
+\item \textbf{NLP and LLMs:} sentiment analysis, NER, topic modelling, prompt
+      engineering, LLM API integration
+\item \textbf{Statistics:} hypothesis testing, confidence intervals, bootstrap
+      resampling, McNemar's test, inter-annotator agreement (Fleiss' $\kappa$)
+\end{itemize}
+
+% ---------- languages + training ----------
+\section{Languages and Additional Training}
+\textbf{Languages:} Bangla (native); English (professional working
+proficiency).\\
+\textbf{Training:} Machine Learning Specialization (Coursera); Data Analytics
+Career Track (Bohubrihi); Data Science Course (NSU ACM).
+
+\end{document}
