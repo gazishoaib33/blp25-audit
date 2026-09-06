@@ -94,16 +94,19 @@ the organisers released everything needed to run it.
 
 \section{Related Work}
 
-\paragraph{Significance in NLP.} \citet{reimers2017reporting} showed that single-run score comparisons are unreliable; \citet{dror2018hitchhiker} surveyed
-appropriate tests; \citet{card2020power} demonstrated that many NLP experiments
-are badly underpowered for the effect sizes they claim. Our
-\S\ref{sec:rankings} applies this lens to a shared-task leaderboard rather than
-to a single paper's ablations.
+\paragraph{Significance in NLP.} \citet{reimers2017reporting} showed single-run
+comparisons are unreliable, \citet{dror2018hitchhiker} surveyed appropriate
+tests, and \citet{card2020power} showed many NLP experiments are underpowered for
+the effects they claim. We apply this lens to a shared-task leaderboard rather
+than to one paper's ablations.
 
 \paragraph{Benchmark quality.} \citet{northcutt2021labelerrors} found pervasive
 label errors across ten popular test sets and showed that correcting them
 reorders model rankings; \citet{jin2026broken} performed the analogous audit for
-text-to-SQL. \citet{vidgen2020directions} survey quality problems specific to
+text-to-SQL. Closest to our \S\ref{sec:metric},
+\citet{harbecke2022micro} show that rankings shift with the weighting scheme and
+argue against reporting micro-F1 alone; we instead bound what micro-F1 can
+register on a given benchmark. \citet{vidgen2020directions} survey quality problems specific to
 abusive-language corpora, and \citet{sap2019racialbias} show how annotation
 artifacts translate into deployed bias. We inherit the methodology of
 \citet{jin2026broken} while closing a gap in it: that work reports neither an
@@ -196,12 +199,11 @@ flip (51.5\%). Every pair we could resolve reliably had a gap of at least
 \label{sec:empirical}
 
 The bound in \S\ref{sec:rankings} is only as good as its assumption about
-discordance, so we measure it. We trained ten systems on the official train
-split and evaluated each once on the official test split, varying feature space,
-classifier family, regularisation, and class weighting---the axes along which
-real submissions differ. Micro-F1 ranges 0.4984--0.6776; these are classical
-models and do not reach the 0.7362 of the shared task's transformer ensembles
-(see Limitations).
+discordance, so we measure it. We trained ten systems on the official train split
+and evaluated each once on the test split, varying feature space, classifier
+family, regularisation and class weighting. Micro-F1 ranges 0.4984--0.6776; these
+are classical models and do not reach the 0.7362 of the shared task's transformer
+ensembles (see Limitations).
 
 \paragraph{Measured discordance.} Across all 45 pairs, the two systems make
 different predictions on a median of 32.0\% of items (range 4.4--48.5\%), and
@@ -238,22 +240,19 @@ discordance. Every BLP top-two gap is below every threshold.}
 
 \paragraph{A necessary qualification.} Small gaps are not automatically
 meaningless: our own top two differ by 0.44\,pp with only 4.1\% discordance and
-hold their order in 98.7\% of 4{,}000 resamples. The defensible claim is
-conditional---a gap is uninformative when smaller than $1.96\sqrt{b+c}/n$---so
-what condemns the BLP gaps is their size \emph{relative to plausible
-discordance}, not their size alone. Figure~\ref{fig:gapwin} shows the
-transition: the one pair inside the BLP range wins 51.5\% of resamples, while
-every pair we could resolve had a gap of at least 0.44\,pp.
+hold their order in 98.7\% of 4{,}000 resamples. The claim is conditional---a gap
+is uninformative when smaller than $1.96\sqrt{b+c}/n$---so what condemns the BLP
+gaps is their size \emph{relative to plausible discordance}. In
+Figure~\ref{fig:gapwin}, the one pair inside the BLP range wins 51.5\% of
+resamples; every pair we could resolve had a gap of at least 0.44\,pp.
 
 \paragraph{Micro-F1 hides the systems that behave best.} Five of our ten systems
 score exactly $0.000$ F1 on \textsc{Sexism}, detecting none of its 29 instances;
-the best detects 3, for an F1 of 0.115. (Only one system never emits the label
-at all; the others emit it but never correctly.) That best-performing system on
-\textsc{Sexism} also has the best macro-F1, 0.5019---and ranks only
-\emph{fourth} of ten on micro-F1. Micro and macro rankings agree weakly (Kendall
-$\tau=0.467$, $p=.073$). Optimising the reported metric does not merely fail to
-reward rare-class detection: in our pool it actively demotes the system that
-does it best.
+the best detects 3 (F1 0.115). That same system has the best macro-F1, 0.5019,
+and ranks only \emph{fourth} of ten on micro-F1; micro and macro rankings agree
+weakly (Kendall $\tau=0.467$, $p=.073$). The reported metric does not merely fail
+to reward rare-class detection---in our pool it demotes the system that does it
+best.
 
 \section{Is Annotation Noise the Ceiling?}
 \label{sec:ceiling}
@@ -363,24 +362,17 @@ better-constructed resource. Our criticism is of the evaluation, not the data.
 \section{Recommendations}
 \label{sec:disc}
 
-\begin{enumerate}\itemsep0pt\parskip0pt
-\item \textbf{Report confidence intervals.} One line of code; it would have
-      shown these five-way ties immediately.
-\item \textbf{Release per-system predictions,} without which McNemar is
-      uncomputable outside the organising committee.
-\item \textbf{Report macro-F1 alongside micro-F1} on skewed label
-      distributions, so rare classes stay visible.
-\item \textbf{Validate schema coherence at release.} Table~\ref{tab:coherence}
-      is mechanical.
-\item \textbf{Declare ties.} Ordering noise manufactures a false narrative of
-      progress.
-\end{enumerate}
-
-\section{Conclusion}
+Five changes, all cheap. \textbf{Report confidence intervals} --- one line of
+code, and it would have shown these five-way ties immediately. \textbf{Release
+per-system predictions,} without which McNemar is uncomputable outside the
+organising committee. \textbf{Report macro-F1 alongside micro-F1} on skewed
+distributions, so rare classes stay visible. \textbf{Validate schema coherence at
+release}; Table~\ref{tab:coherence} is mechanical. And \textbf{declare ties} ---
+ordering noise manufactures a false narrative of progress.
 
 The dataset is well constructed; the evaluation cannot support the rankings it
-reports. The top five systems are tied in all three subtasks, the plateau is not
-annotation noise, and the metric is blind to the rarest hate category.
+reports. The top five are tied in all three subtasks, the plateau is not
+annotation noise, and the metric is blind to the rarest category.
 
 \section*{Limitations}
 \label{sec:limitations}
