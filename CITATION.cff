@@ -5,6 +5,7 @@ authors:
   - family-names: Gazi
     given-names: Shoaib
     affiliation: Jahangirnagar University
+    orcid: "https://orcid.org/0009-0002-8435-4983"
 identifiers:
   - type: doi
     value: 10.5281/zenodo.22472234
@@ -19,5 +20,6 @@ preferred-citation:
     - family-names: Gazi
       given-names: Shoaib
       affiliation: Jahangirnagar University
+      orcid: "https://orcid.org/0009-0002-8435-4983"
   year: 2026
   doi: 10.5281/zenodo.22472234
