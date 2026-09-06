@@ -1,9 +1,23 @@
 cff-version: 1.2.0
 title: "Indistinguishable at the Top: A Statistical Audit of the BLP-2025 Bangla Hate Speech Shared Task"
-message: "If you use this audit or its code, please cite it."
+message: "If you use this audit or its code, please cite the preprint."
 authors:
-  - family-names: Shoaib
-    given-names: Gazi
+  - family-names: Gazi
+    given-names: Shoaib
+    affiliation: Jahangirnagar University
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22472234
+    description: "Preprint (Zenodo)"
 repository-code: "https://github.com/gazishoaib33/blp25-audit"
 license: MIT
 year: 2026
+preferred-citation:
+  type: article
+  title: "Indistinguishable at the Top: A Statistical Audit of the BLP-2025 Bangla Hate Speech Shared Task"
+  authors:
+    - family-names: Gazi
+      given-names: Shoaib
+      affiliation: Jahangirnagar University
+  year: 2026
+  doi: 10.5281/zenodo.22472234

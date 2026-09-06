@@ -1,5 +1,8 @@
 # Auditing the BLP-2025 Bangla Hate Speech Shared Task
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22472234.svg)](https://doi.org/10.5281/zenodo.22472234)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 A statistical and annotation audit of [BLP-2025 Task 1](https://aclanthology.org/2025.banglalp-1.32/)
 (Bangla Hate Speech Identification), following the methodology of Jin et al.,
 *Text-to-SQL Benchmarks are Broken* (CIDR 2026).
@@ -107,3 +110,21 @@ criticism here is of the evaluation design, not of the resource or the participa
 
 Code: MIT (see [LICENSE](LICENSE)). Analysis outputs derived from the BLP-2025 dataset
 remain subject to the dataset's CC BY-NC-SA 4.0 terms.
+
+## Citation
+
+Gazi, S. (2026). *Indistinguishable at the Top: A Statistical Audit of the BLP-2025
+Bangla Hate Speech Shared Task.* Preprint, Zenodo.
+[doi:10.5281/zenodo.22472234](https://doi.org/10.5281/zenodo.22472234)
+
+```bibtex
+@misc{gazi2026blpaudit,
+  title     = {Indistinguishable at the Top: A Statistical Audit of the
+               {BLP}-2025 {B}angla Hate Speech Shared Task},
+  author    = {Gazi, Shoaib},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22472234},
+  url       = {https://doi.org/10.5281/zenodo.22472234}
+}
+```
